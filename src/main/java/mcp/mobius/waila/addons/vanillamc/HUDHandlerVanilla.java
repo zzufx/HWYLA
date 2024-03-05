@@ -72,9 +72,9 @@ public class HUDHandlerVanilla implements IWailaDataProvider {
 			return new ItemStack(Items.redstone);
 		}
 
-        if (block == doubleplant && (accessor.getMetadata() & 8) != 0) {
+        if (block == doubleplant) {
             int x = accessor.getPosition().getX();
-            int y = accessor.getPosition().getY() - 1;
+            int y = accessor.getPosition().getY();
             int z = accessor.getPosition().getZ();
             int meta = doubleplant.getMetaFromState(accessor.getWorld().getBlockState(new BlockPos(x, y, z)));
             return new ItemStack(doubleplant, 1, meta);

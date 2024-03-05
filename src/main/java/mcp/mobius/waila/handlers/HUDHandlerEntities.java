@@ -62,7 +62,9 @@ public class HUDHandlerEntities implements IWailaEntityProvider {
 	@Override
 	public List<String> getWailaTail(Entity entity, List<String> currenttip, IWailaEntityAccessor accessor, IWailaConfigHandler config) {
 		try {
-			currenttip.add(BLUE + ITALIC + getEntityMod(entity));
+			if (getEntityMod(entity) != "Minecraft") {
+				currenttip.add(BLUE + ITALIC + getEntityMod(entity));
+			}
 		} catch (Exception e) {
 			currenttip.add(BLUE + ITALIC + "Unknown");
 		}
